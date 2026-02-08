@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Vaishnavi 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --rose-gold: #f4c2c2;
+            --pink: #ff6b9d;
+            --purple: #8b5cf6;
+            --amber: #fbbf24;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            color: #fff;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23ff6b9d"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'), auto;
+        }
+
+        /* Floating Hearts Background */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            animation: floatUp 15s infinite ease-in-out;
+            opacity: 0;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background: var(--pink);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .heart::before {
+            left: 10px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes floatUp {
+            0% {
+                bottom: -50px;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg) scale(0.5);
+            }
+            10% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 0.2;
+                transform: translateX(30px) rotate(180deg) scale(1);
+            }
+            100% {
+                bottom: 100vh;
+                opacity: 0;
+                transform: translateX(-30px) rotate(360deg) scale(0.5);
+            }
+        }
+
+        /* Page Sections */
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .page.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page.hidden {
+            display: none;
+        }
+
+        /* Landing Page */
+        #landing {
+            text-align: center;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--rose-gold), var(--pink), var(--purple), var(--amber));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 8s ease infinite, fadeInScale 1.5s ease;
+            text-shadow: 0 0 40px rgba(255, 107, 157, 0.5);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .shayari-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 3rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 2s ease 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .shayari {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            line-height: 2;
+            color: var(--rose-gold);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .signature {
+            margin-top: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--amber);
+            font-style: italic;
+        }
+
+        .btn {
+            margin-top: 3rem;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 2s ease 1s both;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+        }
+
+        /* Memory Lane Page */
+        #memories {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .memories-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            text-align: center;
+            background: linear-gradient(135deg, var(--rose-gold), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 3rem;
+        }
+
+        .photo-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.6s ease;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .photo-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(255, 107, 157, 0.3);
+            border-color: var(--pink);
+        }
+
+        .photo-wrapper {
+            position: relative;
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .photo-date {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--amber);
+        }
+
+        .photo-caption {
+            margin-top: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--rose-gold);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .photo-memory {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Love Messages Page */
+        #messages {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .messages-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            text-align: center;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 3rem;
+        }
+
+        .messages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .message-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 107, 157, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .message-card:hover::before {
+            left: 100%;
+        }
+
+        .message-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--pink);
+            box-shadow: 0 20px 50px rgba(255, 107, 157, 0.4);
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--rose-gold);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Proposal Page */
+        #proposal {
+            text-align: center;
+        }
+
+        .proposal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            background: linear-gradient(135deg, var(--rose-gold), var(--pink), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 3rem;
+            animation: fadeInScale 1s ease;
+        }
+
+        .proposal-question {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--rose-gold);
+            margin-bottom: 3rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .proposal-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+
+        #yesBtn, #noBtn {
+            padding: 1.5rem 3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        #yesBtn {
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+        }
+
+        #noBtn {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            color: rgba(255, 255, 255, 0.6);
+            position: relative;
+        }
+
+        .success-container {
+            display: none;
+            text-align: center;
+            animation: fadeInScale 1s ease;
+        }
+
+        .success-container.show {
+            display: block;
+        }
+
+        .dudu-bubu {
+            width: 300px;
+            height: 300px;
+            margin: 2rem auto;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .success-message {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--pink);
+            margin-top: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Particle Canvas */
+        #particleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+        }
+
+        /* Progress Indicator */
+        .progress-indicator {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .progress-dot.active {
+            background: var(--pink);
+            transform: scale(1.3);
+            box-shadow: 0 0 20px var(--pink);
+        }
+
+        /* Love Counter */
+        .love-counter {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            z-index: 100;
+            font-size: 1rem;
+            color: var(--rose-gold);
+        }
+
+        .love-counter span {
+            color: var(--pink);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .shayari-container {
+                padding: 2rem;
+            }
+
+            .photo-placeholder {
+                height: 300px;
+            }
+
+            .messages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proposal-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .love-counter {
+                top: 1rem;
+                right: 1rem;
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .progress-indicator {
+                bottom: 1rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Love Counter -->
+    <div class="love-counter">
+        <!-- PERSONALIZATION: Update the date to your relationship start date -->
+        Together for <span id="daysCounter">0</span> beautiful days 💕
+    </div>
+
+    <!-- Canvas for Particle Effects -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Page 1: Landing -->
+    <div class="page active" id="landing">
+        <h1 class="main-title">HAPPY BIRTHDAY<br>MY DEAR VAISHNAVI !!!</h1>
+        
+        <div class="shayari-container">
+            <div class="shayari">
+                मुस्कुराते रहे आप हज़ारो के बीच में,<br>
+                जैसे एक फूल हो हज़ारो के बीच में,<br>
+                जिंदगी की सारी खुशियां हो आपके नसीब में,<br>
+                जैसे एक ही चाँद होता है तारों के बीच में !!<br>
+                <strong>जन्मदिन की शुभकामना !!</strong>
+                <strong>I LOVE YOU VAISHNAVI 💕</strong>
+            </div>
+            <div class="signature">- Vinayak 💕</div>
+        </div>
+
+        <button class="btn" onclick="goToPage('memories')">
+            Begin Our Journey ✨
+        </button>
+    </div>
+
+    <!-- Page 2: Memory Lane -->
+    <div class="page hidden" id="memories">
+        <h2 class="memories-title">Our Beautiful Journey 📸</h2>
+        
+        <!-- PERSONALIZATION: Replace photo placeholders with your actual photos -->
+        <!-- You can replace the background color in photo-placeholder with: -->
+        <!-- <img src="your-photo.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:5px;"> -->
+        
+        <div class="photo-card">
+            <div class="photo-wrapper">
+                <div class="photo-date">January 2023</div>
+                <div class="photo-placeholder">
+                    <img src="1512.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:5px;"><br>
+                    Our First Adventure Together
+                </div>
+            </div>
+            <div class="photo-caption">Our First Adventure Together</div>
+            <div class="photo-memory">Where it all began... The moment I knew you were special ✨</div>
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-wrapper">
+                <div class="photo-date">March 2023</div>
+                <div class="photo-placeholder">
+                    <img src="1514.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:5px;"><br>
+                    The Day You Made Me Smile
+                </div>
+            </div>
+            <div class="photo-caption">The Day You Made Me Smile</div>
+            <div class="photo-memory">Your laughter became my favorite sound 🎵</div>
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-wrapper">
+                <div class="photo-date">June 2023</div>
+                <div class="photo-placeholder">
+                    <img src="1513.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:5px;"><br>
+                    Coffee Dates & Conversations
+                </div>
+            </div>
+            <div class="photo-caption">Coffee Dates & Conversations</div>
+            <div class="photo-memory">Endless talks and endless dreams ☕💭</div>
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-wrapper">
+                <div class="photo-date">September 2023</div>
+                <div class="photo-placeholder">
+                    <img src="1515.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:5px;"><br>
+                    Creating Memories
+                </div>
+            </div>
+            <div class="photo-caption">Creating Memories</div>
+            <div class="photo-memory">Every moment with you is a treasure 💎</div>
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-wrapper">
+                <div class="photo-date">December 2023</div>
+                <div class="photo-placeholder">
+                    <img src="1516.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:5px;"><br>
+                    Our Special Moments
+                </div>
+            </div>
+            <div class="photo-caption">Our Special Moments</div>
+            <div class="photo-memory">Making ordinary days extraordinary 🌟</div>
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-wrapper">
+                <div class="photo-date">April 2024</div>
+                <div class="photo-placeholder">
+                    <img src="1517.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:5px;"><br>
+                    Adventures & Laughter
+                </div>
+            </div>
+            <div class="photo-caption">Adventures & Laughter</div>
+            <div class="photo-memory">With you, every day is an adventure 🗺️</div>
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-wrapper">
+                <div class="photo-date">August 2024</div>
+                <div class="photo-placeholder">
+                    <img src="1518.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:5px;"><br>
+                    Together Forever
+                </div>
+            </div>
+            <div class="photo-caption">Together Forever</div>
+            <div class="photo-memory">The beginning of our forever 💫</div>
+        </div>
+
+        <button class="btn" onclick="goToPage('messages')">
+            Continue to Love Messages 💌
+        </button>
+    </div>
+
+    <!-- Page 3: Love Messages -->
+    <div class="page hidden" id="messages">
+        <h2 class="messages-title">Messages From My Heart 💕</h2>
+        
+        <!-- PERSONALIZATION: Add your own personal messages here -->
+        <div class="messages-grid">
+            <div class="message-card" onclick="triggerAnimation(this, 'hearts')">
+                <p class="message-text">"Every moment with you feels like magic, like the universe conspired to bring us together ✨"</p>
+            </div>
+
+            <div class="message-card" onclick="triggerAnimation(this, 'confetti')">
+                <p class="message-text">"You're my favorite chapter in this story called life, and I want to write a thousand more with you 📖"</p>
+            </div>
+
+            <div class="message-card" onclick="triggerAnimation(this, 'sparkle')">
+                <p class="message-text">"Your smile is my daily dose of happiness, my sunshine on cloudy days ☀️"</p>
+            </div>
+
+            <div class="message-card" onclick="triggerAnimation(this, 'particles')">
+                <p class="message-text">"In a world of billions, you're the one my heart chose. Thank you for choosing me too 💝"</p>
+            </div>
+
+            <div class="message-card" onclick="triggerAnimation(this, 'wave')">
+                <p class="message-text">"With you, I've found my home, my peace, my everything 🏡"</p>
+            </div>
+
+            <div class="message-card" onclick="triggerAnimation(this, 'hearts')">
+                <p class="message-text">"You make me believe in fairytales, because loving you is like living in one 👑"</p>
+            </div>
+
+            <div class="message-card" onclick="triggerAnimation(this, 'glow')">
+                <p class="message-text">"Every day with you is a gift I never want to unwrap too fast 🎁"</p>
+            </div>
+        </div>
+
+        <button class="btn" onclick="goToPage('proposal')" style="margin-top: 3rem;">
+            One More Thing... 💍
+        </button>
+    </div>
+
+    <!-- Page 4: Proposal -->
+    <div class="page hidden" id="proposal">
+        <div id="proposalContent">
+            <h2 class="proposal-title">A Question From My Heart 💖</h2>
+            <p class="proposal-question">Will you marry me, Vaishnavi?</p>
+            
+            <div class="proposal-buttons">
+                <button id="yesBtn" onclick="handleYes()">YES! 💕</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div>
+
+        <div class="success-container" id="successContainer">
+            <h2 class="proposal-title">SHE SAID YES! 🎉</h2>
+            
+            <!-- Dudu Bubu Wedding Illustration -->
+            <svg class="dudu-bubu" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Groom Bear (Dudu) -->
+                <g id="groom">
+                    <!-- Body -->
+                    <ellipse cx="120" cy="220" rx="50" ry="60" fill="#8B4513"/>
+                    <!-- Head -->
+                    <circle cx="120" cy="150" r="45" fill="#A0522D"/>
+                    <!-- Ears -->
+                    <circle cx="90" cy="125" r="20" fill="#A0522D"/>
+                    <circle cx="150" cy="125" r="20" fill="#A0522D"/>
+                    <!-- Face -->
+                    <circle cx="110" cy="145" r="6" fill="#000"/>
+                    <circle cx="130" cy="145" r="6" fill="#000"/>
+                    <ellipse cx="120" cy="160" rx="8" ry="6" fill="#000"/>
+                    <!-- Smile -->
+                    <path d="M 110 165 Q 120 172 130 165" stroke="#000" stroke-width="2" fill="none"/>
+                    <!-- Suit -->
+                    <rect x="95" y="195" width="50" height="50" fill="#000" rx="5"/>
+                    <!-- Bow Tie -->
+                    <polygon points="110,195 130,195 125,200 135,205 125,210 110,210 115,205 105,200" fill="#ff6b9d"/>
+                </g>
+                
+                <!-- Bride Bear (Bubu) -->
+                <g id="bride">
+                    <!-- Body -->
+                    <ellipse cx="280" cy="220" rx="50" ry="60" fill="#DEB887"/>
+                    <!-- Head -->
+                    <circle cx="280" cy="150" r="45" fill="#F4A460"/>
+                    <!-- Ears -->
+                    <circle cx="250" cy="125" r="20" fill="#F4A460"/>
+                    <circle cx="310" cy="125" r="20" fill="#F4A460"/>
+                    <!-- Face -->
+                    <circle cx="270" cy="145" r="6" fill="#000"/>
+                    <circle cx="290" cy="145" r="6" fill="#000"/>
+                    <ellipse cx="280" cy="160" rx="8" ry="6" fill="#000"/>
+                    <!-- Smile -->
+                    <path d="M 270 165 Q 280 172 290 165" stroke="#000" stroke-width="2" fill="none"/>
+                    <!-- Dress -->
+                    <path d="M 230 195 L 280 195 L 290 270 L 270 270 L 230 270 Z" fill="#fff"/>
+                    <!-- Veil -->
+                    <path d="M 250 120 Q 280 110 310 120 L 310 180 L 250 180 Z" fill="#fff" opacity="0.7"/>
+                    <!-- Crown -->
+                    <path d="M 260 115 L 265 105 L 270 115 L 275 105 L 280 115 L 285 105 L 290 115 L 295 105 L 300 115" stroke="#fbbf24" stroke-width="3" fill="none"/>
+                    <!-- Blush -->
+                    <circle cx="260" cy="155" r="8" fill="#ff6b9d" opacity="0.4"/>
+                    <circle cx="300" cy="155" r="8" fill="#ff6b9d" opacity="0.4"/>
+                </g>
+                
+                <!-- Hearts -->
+                <g id="hearts">
+                    <path d="M 200 100 L 205 110 L 195 110 Z M 200 105 Q 195 100 190 105 Q 190 115 200 120 Q 210 115 210 105 Q 205 100 200 105" fill="#ff6b9d">
+                        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="2s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M 180 180 Q 175 175 170 180 Q 170 190 180 195 Q 190 190 190 180 Q 185 175 180 180" fill="#8b5cf6">
+                        <animateTransform attributeName="transform" type="translate" values="0,0; -5,-15; 0,0" dur="2.5s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M 220 180 Q 215 175 210 180 Q 210 190 220 195 Q 230 190 230 180 Q 225 175 220 180" fill="#fbbf24">
+                        <animateTransform attributeName="transform" type="translate" values="0,0; 5,-15; 0,0" dur="2.2s" repeatCount="indefinite"/>
+                    </path>
+                </g>
+            </svg>
+
+            <p class="success-message">You've made me the happiest person alive! 💕</p>
+            <p class="signature" style="font-size: 2rem; margin-top: 2rem;">Forever Yours,<br>Vinayak 💍</p>
+        </div>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+        <div class="progress-dot active" onclick="goToPage('landing')"></div>
+        <div class="progress-dot" onclick="goToPage('memories')"></div>
+        <div class="progress-dot" onclick="goToPage('messages')"></div>
+        <div class="progress-dot" onclick="goToPage('proposal')"></div>
+    </div>
+
+    <script>
+        // Floating Hearts Generation
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            const heartCount = 20;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 15 + 's';
+                heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                
+                const size = Math.random() * 0.5 + 0.5;
+                heart.style.transform = `scale(${size})`;
+                heart.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                container.appendChild(heart);
+            }
+        }
+
+        // Page Navigation
+        let currentPage = 'landing';
+        
+        function goToPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            const dots = document.querySelectorAll('.progress-dot');
+            
+            pages.forEach(page => {
+                page.classList.remove('active');
+                page.classList.add('hidden');
+            });
+            
+            const targetPage = document.getElementById(pageId);
+            targetPage.classList.remove('hidden');
+            setTimeout(() => targetPage.classList.add('active'), 50);
+            
+            currentPage = pageId;
+            
+            // Update progress dots
+            const pageOrder = ['landing', 'memories', 'messages', 'proposal'];
+            const currentIndex = pageOrder.indexOf(pageId);
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Intersection Observer for Memory Cards
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.photo-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Message Card Animations
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        function triggerAnimation(card, type) {
+            const rect = card.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            switch(type) {
+                case 'hearts':
+                    createHeartBurst(centerX, centerY);
+                    break;
+                case 'confetti':
+                    createConfetti(centerX, centerY);
+                    break;
+                case 'sparkle':
+                    createSparkles(centerX, centerY);
+                    break;
+                case 'particles':
+                    createParticles(centerX, centerY);
+                    break;
+                case 'wave':
+                    createWave(card);
+                    break;
+                case 'flip':
+                    create3DFlip(card);
+                    break;
+                case 'glow':
+                    createGlow(card);
+                    break;
+            }
+        }
+
+        function createHeartBurst(x, y) {
+            canvas.style.display = 'block';
+            const hearts = [];
+            const colors = ['#ff6b9d', '#8b5cf6', '#fbbf24', '#f4c2c2'];
+            
+            for (let i = 0; i < 20; i++) {
+                hearts.push({
+                    x: x,
+                    y: y,
+                    vx: (Math.random() - 0.5) * 10,
+                    vy: (Math.random() - 0.5) * 10 - 5,
+                    size: Math.random() * 20 + 10,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    opacity: 1
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+
+                hearts.forEach(heart => {
+                    heart.x += heart.vx;
+                    heart.y += heart.vy;
+                    heart.vy += 0.3;
+                    heart.opacity -= 0.01;
+
+                    if (heart.opacity > 0) {
+                        active = true;
+                        ctx.globalAlpha = heart.opacity;
+                        ctx.fillStyle = heart.color;
+                        ctx.font = `${heart.size}px Arial`;
+                        ctx.fillText('❤️', heart.x, heart.y);
+                    }
+                });
+
+                ctx.globalAlpha = 1;
+
+                if (active) {
+                    requestAnimationFrame(animate);
+                } else {
+                    canvas.style.display = 'none';
+                }
+            }
+
+            animate();
+        }
+
+        function createConfetti(x, y) {
+            canvas.style.display = 'block';
+            const particles = [];
+            const colors = ['#ff6b9d', '#8b5cf6', '#fbbf24', '#f4c2c2', '#fff'];
+            
+            for (let i = 0; i < 50; i++) {
+                particles.push({
+                    x: x,
+                    y: y,
+                    vx: (Math.random() - 0.5) * 15,
+                    vy: Math.random() * -15 - 5,
+                    size: Math.random() * 8 + 3,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    opacity: 1,
+                    rotation: Math.random() * 360,
+                    rotationSpeed: (Math.random() - 0.5) * 20
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.5;
+                    p.rotation += p.rotationSpeed;
+                    p.opacity -= 0.008;
+
+                    if (p.opacity > 0) {
+                        active = true;
+                        ctx.save();
+                        ctx.globalAlpha = p.opacity;
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate(p.rotation * Math.PI / 180);
+                        ctx.fillStyle = p.color;
+                        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                        ctx.restore();
+                    }
+                });
+
+                if (active) {
+                    requestAnimationFrame(animate);
+                } else {
+                    canvas.style.display = 'none';
+                }
+            }
+
+            animate();
+        }
+
+        function createSparkles(x, y) {
+            canvas.style.display = 'block';
+            const sparkles = [];
+            
+            for (let i = 0; i < 30; i++) {
+                const angle = (Math.PI * 2 * i) / 30;
+                sparkles.push({
+                    x: x,
+                    y: y,
+                    vx: Math.cos(angle) * 5,
+                    vy: Math.sin(angle) * 5,
+                    size: Math.random() * 4 + 2,
+                    opacity: 1
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+
+                sparkles.forEach(s => {
+                    s.x += s.vx;
+                    s.y += s.vy;
+                    s.vx *= 0.95;
+                    s.vy *= 0.95;
+                    s.opacity -= 0.02;
+
+                    if (s.opacity > 0) {
+                        active = true;
+                        ctx.globalAlpha = s.opacity;
+                        ctx.fillStyle = '#fbbf24';
+                        ctx.beginPath();
+                        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                        ctx.fill();
+                        
+                        // Star shape
+                        ctx.fillStyle = '#fff';
+                        ctx.fillRect(s.x - s.size/2, s.y - 1, s.size, 2);
+                        ctx.fillRect(s.x - 1, s.y - s.size/2, 2, s.size);
+                    }
+                });
+
+                ctx.globalAlpha = 1;
+
+                if (active) {
+                    requestAnimationFrame(animate);
+                } else {
+                    canvas.style.display = 'none';
+                }
+            }
+
+            animate();
+        }
+
+        function createParticles(x, y) {
+            canvas.style.display = 'block';
+            const particles = [];
+            const colors = ['#ff6b9d', '#8b5cf6'];
+            
+            for (let i = 0; i < 40; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 8 + 2;
+                particles.push({
+                    x: x,
+                    y: y,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed,
+                    size: Math.random() * 6 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    opacity: 1,
+                    trail: []
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+
+                particles.forEach(p => {
+                    p.trail.push({ x: p.x, y: p.y });
+                    if (p.trail.length > 10) p.trail.shift();
+                    
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vx *= 0.98;
+                    p.vy *= 0.98;
+                    p.opacity -= 0.015;
+
+                    if (p.opacity > 0) {
+                        active = true;
+                        
+                        // Draw trail
+                        p.trail.forEach((point, index) => {
+                            ctx.globalAlpha = (index / p.trail.length) * p.opacity * 0.5;
+                            ctx.fillStyle = p.color;
+                            ctx.beginPath();
+                            ctx.arc(point.x, point.y, p.size * 0.5, 0, Math.PI * 2);
+                            ctx.fill();
+                        });
+                        
+                        // Draw particle
+                        ctx.globalAlpha = p.opacity;
+                        ctx.fillStyle = p.color;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                });
+
+                ctx.globalAlpha = 1;
+
+                if (active) {
+                    requestAnimationFrame(animate);
+                } else {
+                    canvas.style.display = 'none';
+                }
+            }
+
+            animate();
+        }
+
+        function createWave(card) {
+            const colors = ['#ff6b9d', '#8b5cf6', '#fbbf24'];
+            let colorIndex = 0;
+            let count = 0;
+
+            const interval = setInterval(() => {
+                card.style.borderColor = colors[colorIndex];
+                card.style.boxShadow = `0 20px 50px ${colors[colorIndex]}80`;
+                colorIndex = (colorIndex + 1) % colors.length;
+                count++;
+
+                if (count > 6) {
+                    clearInterval(interval);
+                    card.style.borderColor = '';
+                    card.style.boxShadow = '';
+                }
+            }, 200);
+        }
+
+        function create3DFlip(card) {
+            card.style.transform = 'rotateY(180deg)';
+            setTimeout(() => {
+                card.style.transform = '';
+            }, 600);
+        }
+
+        function createGlow(card) {
+            let intensity = 0;
+            let increasing = true;
+
+            const interval = setInterval(() => {
+                if (increasing) {
+                    intensity += 10;
+                    if (intensity >= 100) increasing = false;
+                } else {
+                    intensity -= 10;
+                    if (intensity <= 0) {
+                        clearInterval(interval);
+                        card.style.boxShadow = '';
+                        return;
+                    }
+                }
+                
+                card.style.boxShadow = `0 0 ${intensity}px rgba(255, 107, 157, 0.8)`;
+            }, 50);
+        }
+
+        // Proposal Page - No Button Escape
+        const noBtn = document.getElementById('noBtn');
+        
+        noBtn.addEventListener('mouseenter', () => {
+            const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+            const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            noBtn.style.transition = 'all 0.3s ease';
+        });
+
+        // Yes Button Handler
+        function handleYes() {
+            document.getElementById('proposalContent').style.display = 'none';
+            document.getElementById('successContainer').classList.add('show');
+            
+            // Massive celebration
+            setTimeout(() => createConfetti(window.innerWidth / 2, window.innerHeight / 2), 100);
+            setTimeout(() => createHeartBurst(window.innerWidth / 2, window.innerHeight / 2), 500);
+            setTimeout(() => createSparkles(window.innerWidth / 2, window.innerHeight / 2), 1000);
+        }
+
+        // Love Counter - Days Together
+        // PERSONALIZATION: Change this date to when you started dating
+        const startDate = new Date('2023-01-01');
+        const today = new Date();
+        const daysTogether = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+        document.getElementById('daysCounter').textContent = daysTogether;
+
+        // Initialize
+        createHearts();
+
+        // Smooth transitions for message cards
+        document.querySelectorAll('.message-card').forEach(card => {
+            card.style.transition = 'all 0.3s ease';
+        });
+    </script>
+</body>
+</html>
